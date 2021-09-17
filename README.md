@@ -28,6 +28,8 @@ The operational flow of OTA-TinyML is shown in below Figure, which comprises of 
 
 This part of OTA-TinyML enables IoT devices to download ML models from the internet, whose implementation, upon providing the target server address along with the directory/path of ML model, initially establishes a connection to the server via Ethernet or WiFi. Then downloads the target from HTTPS URL using *http.get()* method of HTTPClient object and passes the file to OTA-TinyML Part 2 for storage on the available memory unit of the edge device. The models stored in the webserver need to be of the *.bin* (model as a compressed binary file) or *.h format (model as a C array), both of which can be generated from the trained model using API *TFLiteConverter.from\_keras\_model()*.
 
+**Code:** Folder [Internet_model_load](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/Internet_model_load). 
+
 ### Part 2: Store, Execute Models from External FS
 
 This part of OTA-TinyML enables storing of multiple ML models (fetched from a webserver) on any memory unit of choice. It is compatible with:
