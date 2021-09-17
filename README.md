@@ -1,5 +1,7 @@
 # OTA-TinyML: Load Tensorflow Lite TinyML Models on Arduino Boards via Internet
 
+This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file of ML models from a webserver into the resource-constrained embedded devices in IoT. OTA-TinyML does not strain hardware (resource-friendly) as its implementation is only a few lines of code. It is compatible with a range of ML models (e.g. text, speech, image domains) and MCUs (e.g. Cortex M series, STM32, Xtensa). The OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
+
 ## MCU Boards, Models for OTA-TinyML Testing
 
 ### MCU boards (B1 - B7)
