@@ -46,6 +46,8 @@ Orthogonal to the conventional TinyML approaches, we show that, on the MCU board
 
 Using this finding/concept, OTA-TinyML initially reads a file (ML model in *model_name.bin* format stored in any memory unit) into a byte array. Then, it allocates memory for the read model using the *malloc()* function and copies the model content byte-by-byte, from the *.bin* file to the MCU SRAM memory, using which the interpreter produces predictions.
 
+**Code:** Folders [Regular_model_load](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/Regular_model_load), [SDFS_model_load](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/SDFS_model_load), [SPIFFS_model_load](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/SPIFFS_model_load).
+
 ## OTA-TinyML Testing
 
 OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
