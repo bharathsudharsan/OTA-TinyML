@@ -19,9 +19,9 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 
-| Task: Model Name | Score | .tflite (KB) | .h (KB)|
-| :---         | :---           |    :---       |	|
-| git status   | git status     | git status    |	|
-| git diff     | git diff       | git diff      |	|
+| Task: Model Name | Score          | .tflite (KB)  | .h (KB)|
+| :---             | :---           | :---          |	     |
+| git status       | git status     | git status    |	     |
+| git diff         | git diff       | git diff      |	     |
 
 Recognize Gestures: MagicWand 0.67 (Acc) 19 118
