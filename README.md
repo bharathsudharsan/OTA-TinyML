@@ -8,6 +8,8 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 Since OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
 
+The models and MCU boards used for OTA-TinyML testing are given below.
+
 ### MCU boards (B1 - B7)
 
 B1: [Teensy 4.0](https://www.pjrc.com/teensy/) (Cortex-M7 @600 MHz, 2MB Flash, 1MB SRAM) <br/>
@@ -30,6 +32,14 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 | Keyword Spotting: MicroSpeech      | 0.62 (Acc)      | 18           | 112       |
 | Image Classification: MobileNet v2 | 0.69 (Acc)      | 3927         | 24215     |
 | Anomaly Detection: MicroNet S-L    | 0.95-0.96 (AUC) | 246-452      | 1523-2794 |
+
+## OTA-TinyML Testing Procedure
+
+For Part 1 testing, to ensure extensiveness, the \texttt{.h} file size of models we fetch from cloud to edge MCUs varies from 112 KB (MicroSpeech) to 143421 KB (Wav2letter). 
+
+For Part 2, we use 4 types of memory units to extensively test the onboard model storing, loading performance of OTA-TinyML. So, SDFS is interfaced to B3, B7; EEFS to B6, B4; Internal SPIFFS of B5; Internal flash memory of B1, B2. 
+
+As shown in the first Figure, we first upload the *.bin* files of 16 pre-trained ML models (6 task types) into an HTTPS webserver. Then, the C++ implementation of the OTA-TinyML approach provided as a *.ino* file (server details entered in this file) is flashed on 7 different MCU boards B1 to B7 using Arduino IDE. At this stage, both the server and edge devices are ready for OTA-TinyML testing. 
 
 ## Extras
 
