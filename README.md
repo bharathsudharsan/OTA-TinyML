@@ -6,7 +6,7 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 ## OTA-TinyML Design
 
-![alt text](https://github.com/bharathsudharsan/Optimized-One-vs-One-Algorithm/blob/main/Infer_time_results.png)
+![alt text](https://github.com/bharathsudharsan/OTA-TinyML/blob/main/OTA-TinyML.png)
 
 ## MCU Boards, Models for OTA-TinyML Testing
 
