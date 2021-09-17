@@ -14,14 +14,13 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 
 ### ML Models
 
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-| Task: Model Name | Score          | .tflite (KB)  | .h (KB)|
-| :---             | :---           | :---          |	     |
-| git status       | git status     | git status    |	     |
-| git diff         | git diff       | git diff      |	     |
-
-Recognize Gestures: MagicWand 0.67 (Acc) 19 118
+|          Task: Model Name          |      Score      | .tflite (KB) |  .h (KB)  |
+|:----------------------------------:|:---------------:|:------------:|:---------:|
+| Recognize Gestures: MagicWand      | 0.67 (Acc)      | 19           | 118       |
+| Visual Wake Words: MicroNet S-L    | 0.76-0.82 (Acc) | 273-529      | 1689-3267 |
+| Speech Recognition: Wav2letter     | 0.0783 (LER)    | 22600        | 143421    |
+| Keyword Spotting: DNN S-L          | 0.82-0.86 (Acc) | 82-491       | 508-3029  |
+| Keyword Spotting: CNN S-L          | 0.91-0.92 (Acc) | 75-492       | 436-3029  |
+| Keyword Spotting: MicroSpeech      | 0.62 (Acc)      | 18           | 112       |
+| Image Classification: MobileNet v2 | 0.69 (Acc)      | 3927         | 24215     |
+| Anomaly Detection: MicroNet S-L    | 0.95-0.96 (AUC) | 246-452      | 1523-2794 |
