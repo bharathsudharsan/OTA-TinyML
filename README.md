@@ -77,6 +77,7 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 | Image Classification: MobileNet v2 | 0.69 (Acc)      | 3927         | 24215     |
 | Anomaly Detection: MicroNet S-L    | 0.95-0.96 (AUC) | 246-452      | 1523-2794 |
 
+**Model files:** Folders: [TFLite_models](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/TFLite_models), [cc_models](https://github.com/bharathsudharsan/OTA-TinyML/tree/main/cc_models)
 
 ### Procedure
 
