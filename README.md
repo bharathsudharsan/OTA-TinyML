@@ -14,6 +14,11 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 
 ### ML Models
 
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
 | Task: Model Name | Score | .tflite (KB) | .h (KB)|
 | :---         | :---           |    :---       |	|
 | git status   | git status     | git status    |	|
