@@ -46,11 +46,11 @@ Using this finding/concept, OTA-TinyML initially reads a file (ML model in *mode
 
 ## OTA-TinyML Testing
 
-Since OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
+OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
 
 The models and MCU boards used for OTA-TinyML testing are given below.
 
-### MCU Boards (B1 - B7)
+### MCU Boards
 
 B1: [Teensy 4.0](https://www.pjrc.com/teensy/) (Cortex-M7 @600 MHz, 2MB Flash, 1MB SRAM) <br/>
 B2: [STM32 Nucleo H7](https://www.st.com/en/evaluation-tools/nucleo-h743zi.html) (Cortex-M7 @480 MHz, 2MB Flash, 1 MB SRAM) <br/>
