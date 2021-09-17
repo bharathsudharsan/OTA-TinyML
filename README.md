@@ -6,8 +6,29 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 ## OTA-TinyML Design
 
+The operational flow of OTA-TinyML is shown in below Figure \ref{archi}, which comprises of two parts. The first part circled 1, contains a method, that upon demand, fetches ML model files from the cloud server on the edge devices. The second part circled 2, contains a method to enable storage of fetched files in internal memory or external filesystems, then the loading and model execution.
+
 ![alt text](https://github.com/bharathsudharsan/OTA-TinyML/blob/main/OTA-TinyML.png)
 
+### Part 1: Models Fetching via HTTPS
+
+This part of OTA-TinyML enables IoT devices to download ML models from the internet, whose implementation, upon providing the target server address along with the directory/path of ML model, initially establishes a connection to the server via Ethernet or WiFi. Then downloads the target from HTTPS URL using *http.get()* method of HTTPClient object and passes the file to OTA-TinyML Part 2 for storage on the available memory unit of the edge device. The models stored in the webserver need to be of the *.bin* (model as a compressed binary file) or *.h format (model as a C array), both of which can be generated from the trained model using API *TFLiteConverter.from\_keras\_model()*.
+
+### Part 2: Store, Execute Models from External FS
+
+This part of OTA-TinyML enables storing of multiple ML models (fetched from a webserver) on any memory unit of choice. It is compatible with:
+
+Internal memory units like on-chip flash and SPI Flash FS (SPIFFS)
+
+External File Systems (FS) like EEPROM FS (EEFS), SD card FS (SDFS). 
+
+This part also is responsible to load and execute models demanded by the IoT application. In conventional TinyML approaches, after the ML model training phase, the output model is converted to an array and exported as a C header file. This file is imported into the code of the IoT application (using *#include model_name.h*), on which the TF Lite Micro interpreter is run to obtain predictions.
+
+Orthogonal to the conventional TinyML approaches, we show that, on the MCU boards, it is possible to load an ML model from a file instead of from a C array. During executing various TinyML models on MCU boards, we found out and also report here that 
+
+*Interpreters works identical in both cases - whether the model is declared as an array from the beginning or loaded as an array from somewhere else* 
+
+Using this finding/concept, OTA-TinyML initially reads a file (ML model in *model_name.bin* format stored in any memory unit) into a byte array. Then, it allocates memory for the read model using the *malloc()* function and copies the model content byte-by-byte, from the *.bin* file to the MCU SRAM memory, using which the interpreter produces predictions.
 
 ## OTA-TinyML Testing
 
