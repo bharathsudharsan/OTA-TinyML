@@ -8,7 +8,7 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 ![alt text](https://github.com/bharathsudharsan/OTA-TinyML/blob/main/OTA-TinyML.png)
 
-## MCU Boards, Models for OTA-TinyML Testing
+## OTA-TinyML Testing
 
 Since OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
 
@@ -37,13 +37,20 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 | Image Classification: MobileNet v2 | 0.69 (Acc)      | 3927         | 24215     |
 | Anomaly Detection: MicroNet S-L    | 0.95-0.96 (AUC) | 246-452      | 1523-2794 |
 
-## OTA-TinyML Testing Procedure
+
+### Procedure
 
 For Part 1 testing, to ensure extensiveness, the \texttt{.h} file size of models we fetch from cloud to edge MCUs varies from 112 KB (MicroSpeech) to 143421 KB (Wav2letter). 
 
 For Part 2, we use 4 types of memory units to extensively test the onboard model storing, loading performance of OTA-TinyML. So, SDFS is interfaced to B3, B7; EEFS to B6, B4; Internal SPIFFS of B5; Internal flash memory of B1, B2. 
 
 As shown in the first Figure, we first upload the *.bin* files of 16 pre-trained ML models (6 task types) into an HTTPS webserver. Then, the C++ implementation of the OTA-TinyML approach provided as a *.ino* file (server details entered in this file) is flashed on 7 different MCU boards B1 to B7 using Arduino IDE. At this stage, both the server and edge devices are ready for OTA-TinyML testing. 
+
+### Results
+
+Starting from B1 to B7, we instructed devices to initialize the model fetching process. The boards B3, B7 with SDFS have the highest storage capacity, so they downloaded all 16 models (188 MB). Similarly, the other boards downloaded models according to their FS memory limits. Next, the fetched model files get stored on the FS interfaced to the boards. Then, based on the device's SRAM capacity, models are loaded from FS and executed to produce inference results. For example, B4 with the least SRAM of 192 KB used OTA-TinyML only on MagicWand and MicroSpeech models. Whereas boards B1-B3, with a better SRAM capacity of 1 MB, used the OTA-TinyML to load and execute more model varieties. 
+
+In summary, despite the diversity in MCU hardware specification or manufacturer, OTA-TinyML part 1 implementation, without stalling the devices, successfully fetched different size models from the cloud. The part 2 implementation successfully could store, load, execute models from internal memory (flash, SPIFFS) and also from external FS (SDFS, EEFS). 
 
 ## Extras
 
