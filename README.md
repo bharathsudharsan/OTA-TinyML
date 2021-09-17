@@ -4,6 +4,10 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 **Why:** OTA-TinyML provides developers and engineers the freedom to remotely re-purpose (load and run the model on demand) IoT devices on-the-fly without the need for physical reflashing. For example, with OTA-TinyML, even the low-cost ESP32 board with only 4 MB flash can dynamically fetch *n* models from webserver such as keyword spotting (3 MB), anomaly detection (2.7 MB), visual wake words (3.2 MB), etc., store in internal memory or external filesystems, then execute any model upon demand.
 
+## OTA-TinyML Design
+
+![alt text](https://github.com/bharathsudharsan/Optimized-One-vs-One-Algorithm/blob/main/Infer_time_results.png)
+
 ## MCU Boards, Models for OTA-TinyML Testing
 
 Since OTA-TinyML enables even constrained, low-cost IoT devices to perform end-to-end remote fetching, storing, and execution of ML models. So OTA-TinyML is tested by performing remote fetching of 6 types of ML models, storing them on 4 types of memory units, then loading and executing on 7 popular MCU boards. 
