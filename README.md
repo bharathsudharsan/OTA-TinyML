@@ -26,3 +26,14 @@ B7: [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 | Keyword Spotting: MicroSpeech      | 0.62 (Acc)      | 18           | 112       |
 | Image Classification: MobileNet v2 | 0.69 (Acc)      | 3927         | 24215     |
 | Anomaly Detection: MicroNet S-L    | 0.95-0.96 (AUC) | 246-452      | 1523-2794 |
+
+## Extras
+
+**Additional Datasets:** In [TinyML datasets](https://github.com/bharathsudharsan/Optimized-One-vs-One-Algorithm/tree/main/TinyML%20Datasets) folder, the following 7 datasets are made available as *.h* files that can be used for training and inference using *Opt-OVO* on MCU boards. The details in brackets are samples size x features count x classes count.
+1. [EMG](https://archive.ics.uci.edu/ml/datasets/EMG+data+for+gestures) (1648 x 63 x 5 ): Raw EMG data recorded by MYO Thalmic bracelet worn on a users forearm. This bracelet is equipped with eight sensors equally spaced around the forearm that simultaneously acquire myographic signals.
+2. [Gas Sensor Array Drift](https://archive.ics.uci.edu/ml/datasets/Gas+Sensor+Array+Drift+Dataset) (1000 x 128 x 6): Contains measurements from 16 chemical sensors utilized in simulations for drift compensation in a discrimination task of 6 gases at various levels of concentrations.
+3. [Gesture Phase Segmentaion](https://archive.ics.uci.edu/ml/datasets/gesture+phase+segmentation) (1000 x 19 x 5):  Contains features extracted from 7 videos with people gesticulating, aiming at studying Gesture Phase Segmentation. It contains 50 attributes divided into two files for each video.
+4. [Human Activity](https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones) (10299 x 561 x 6): Database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+5. [Mammographic Mass](http://archive.ics.uci.edu/ml/datasets/mammographic+mass) (830 x 4 x 2): Dataset for discrimination of benign and malignant mammographic masses based on BI-RADS attributes and the patient's age.
+6. [Sensorless Drive Diagnosis](https://archive.ics.uci.edu/ml/datasets/dataset+for+sensorless+drive+diagnosis)  (1000 x 48 x 11): Features are extracted from motor current. The motor has intact and defective components. This results in 11 different classes with different conditions.
+7. [Sport Activity](https://archive.ics.uci.edu/ml/datasets/Daily+and+Sports+Activities) (4800 x 180 x 10): The dataset comprises motion sensor data of 19 daily and sports activities each performed by 8 subjects in their own style for 5 minutes. Five Xsens MTx units are used on the torso, arms, and legs.
