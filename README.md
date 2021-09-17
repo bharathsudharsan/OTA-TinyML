@@ -4,6 +4,20 @@ This repo contains code of OTA-TinyML, that via HTTPS, loads the C source file o
 
 **Why:** OTA-TinyML provides developers and engineers the freedom to remotely re-purpose (load and run the model on demand) IoT devices on-the-fly without the need for physical reflashing. For example, with OTA-TinyML, even the low-cost ESP32 board with only 4 MB flash can dynamically fetch *n* models from webserver such as keyword spotting (3 MB), anomaly detection (2.7 MB), visual wake words (3.2 MB), etc., store in internal memory or external filesystems, then execute any model upon demand.
 
+**Demo:** Video recording in progress.
+
+## Table of Contents
+
+- [OTA-TinyML Design](#ota-tinyml-design)
+  * [Part 1: Models Fetching via HTTPS](#part-1--models-fetching-via-https)
+  * [Part 2: Store, Execute Models from External FS](#part-2--store--execute-models-from-external-fs)
+- [OTA-TinyML Testing](#ota-tinyml-testing)
+  * [MCU Boards (B1 - B7)](#mcu-boards--b1---b7-)
+  * [ML Models](#ml-models)
+  * [Procedure](#procedure)
+  * [Results](#results)
+- [Extras](#extras)
+
 ## OTA-TinyML Design
 
 The operational flow of OTA-TinyML is shown in below Figure, which comprises of two parts. The first part circled 1, contains a method, that upon demand, fetches ML model files from the cloud server on the edge devices. The second part circled 2, contains a method to enable storage of fetched files in internal memory or external filesystems, then the loading and model execution.
@@ -24,7 +38,7 @@ This part of OTA-TinyML enables storing of multiple ML models (fetched from a we
 
 This part also is responsible to load and execute models demanded by the IoT application. In conventional TinyML approaches, after the ML model training phase, the output model is converted to an array and exported as a C header file. This file is imported into the code of the IoT application (using *#include model_name.h*), on which the TF Lite Micro interpreter is run to obtain predictions.
 
-Orthogonal to the conventional TinyML approaches, we show that, on the MCU boards, it is possible to load an ML model from a file instead of from a C array. During executing various TinyML models on MCU boards, we found out and also report here that 
+Orthogonal to the conventional TinyML approaches, we show that, on the MCU boards, it is possible to load an ML model from a file instead of from a C array. During executing various TinyML models on MCU boards, we found out and also report here that: 
 
 ***Interpreters works identical in both cases - whether the model is declared as an array from the beginning or loaded as an array from somewhere else***
 
