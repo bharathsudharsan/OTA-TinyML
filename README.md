@@ -26,7 +26,7 @@ This part also is responsible to load and execute models demanded by the IoT app
 
 Orthogonal to the conventional TinyML approaches, we show that, on the MCU boards, it is possible to load an ML model from a file instead of from a C array. During executing various TinyML models on MCU boards, we found out and also report here that 
 
-**Interpreters works identical in both cases - whether the model is declared as an array from the beginning or loaded as an array from somewhere else** 
+***Interpreters works identical in both cases - whether the model is declared as an array from the beginning or loaded as an array from somewhere else***
 
 Using this finding/concept, OTA-TinyML initially reads a file (ML model in *model_name.bin* format stored in any memory unit) into a byte array. Then, it allocates memory for the read model using the *malloc()* function and copies the model content byte-by-byte, from the *.bin* file to the MCU SRAM memory, using which the interpreter produces predictions.
 
