@@ -101,3 +101,18 @@ In summary, despite the diversity in MCU hardware specification or manufacturer,
 5. [Mammographic Mass](http://archive.ics.uci.edu/ml/datasets/mammographic+mass) (830 x 4 x 2): Dataset for discrimination of benign and malignant mammographic masses based on BI-RADS attributes and the patient's age.
 6. [Sensorless Drive Diagnosis](https://archive.ics.uci.edu/ml/datasets/dataset+for+sensorless+drive+diagnosis)  (1000 x 48 x 11): Features are extracted from motor current. The motor has intact and defective components. This results in 11 different classes with different conditions.
 7. [Sport Activity](https://archive.ics.uci.edu/ml/datasets/Daily+and+Sports+Activities) (4800 x 180 x 10): The dataset comprises motion sensor data of 19 daily and sports activities each performed by 8 subjects in their own style for 5 minutes. Five Xsens MTx units are used on the torso, arms, and legs.
+
+Please consider to cite this paper using the BibTex entry below.
+
+```
+@article{sudharsan2022ota,
+  title={Ota-tinyml: over the air deployment of tinyml models and execution on iot devices},
+  author={Sudharsan, Bharath and Breslin, John G and Tahir, Mehreen and Ali, Muhammad Intizar and Rana, Omer and Dustdar, Schahram and Ranjan, Rajiv},
+  journal={IEEE Internet Computing},
+  volume={26},
+  number={3},
+  pages={69--78},
+  year={2022},
+  publisher={IEEE}
+}
+```
